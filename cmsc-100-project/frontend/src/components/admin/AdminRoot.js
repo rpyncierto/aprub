@@ -21,7 +21,7 @@ export default function AdminRoot() {
               <CssBaseline />
               <div className='admin'>
                   <SideBar/>
-                  <Outlet/>
+                    <Outlet/>
               </div>
           </ThemeProvider>
       </ColorModeContext.Provider>
