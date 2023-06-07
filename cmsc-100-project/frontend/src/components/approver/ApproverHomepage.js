@@ -753,7 +753,8 @@ export default function ApproverHomepage() {
                         {((userData.userType === "adviser" &&
                           application.step === 2) ||
                           (userData.userType === "officer" &&
-                            application.step === 3)) && application.status !== "cleared" && (
+                            application.step === 3)) && application.status !== "cleared" &&
+                            !application.isReturned && (
                           
                           <div style={{ marginTop: 10 }}>
                             <button

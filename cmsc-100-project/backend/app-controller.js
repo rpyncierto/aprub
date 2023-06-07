@@ -209,6 +209,8 @@ const returnApplication = async (req, res) => {
     if (userType !== "student") {
       if (userType !== "officer") application.step = application.step - 1; // Set the step to 1 for returning the application
       application.isReturned = true;
+    } else {
+      application.isReturned = false;
     }
 
     const savedApplication = await application.save();

@@ -197,7 +197,6 @@ export default function StudentHomepage() {
 
   const handleSubmit = (value) => {
     setRemarkContent(value);
-    postRemark
     console.log(remarkContent);
   };
 
