@@ -15,7 +15,7 @@ import { create } from "domain";
 // char not necessary pala HAHAHA
 
 // connect to Mongo DB
-await mongoose.connect("mongodb://localhost:27017/AUTH");
+await mongoose.connect("mongodb+srv://rpyncierto:MexcRc3qf1HBam3p@aprub.ziwh2db.mongodb.net/aprub?retryWrites=true&w=majority");
 
 // register User model with Mongoose
 // mongoose.model("User", UserSchema);
