@@ -24,7 +24,7 @@ import Dashboard from './components/admin/Dashboard';
 
 // Send a POST request to API to check if the user is logged in. Redirect the user to /student-homepage if already logged in
 const checkIfLoggedInOnHome = async () => {
-  const res = await fetch("http://localhost:3001/checkifloggedin", {
+  const res = await fetch("https://aprub.onrender.com/checkifloggedin", {
     method: "POST",
     credentials: "include",
   });
@@ -48,7 +48,7 @@ const checkIfLoggedInOnHome = async () => {
 // Send a POST request to API to check if the user is a student, admin, or approver
 // each user type has own function for each type of root routes
 const checkIfLoggedInAsStudent = async () => {
-  const res = await fetch("http://localhost:3001/checkifloggedin", {
+  const res = await fetch("https://aprub.onrender.com/checkifloggedin", {
     method: "POST",
     credentials: "include",
   });
@@ -60,7 +60,7 @@ const checkIfLoggedInAsStudent = async () => {
 };
 
 const checkIfLoggedInAsAdmin = async () => {
-  const res = await fetch("http://localhost:3001/checkifloggedin", {
+  const res = await fetch("https://aprub.onrender.com/checkifloggedin", {
     method: "POST",
     credentials: "include",
   });
@@ -72,7 +72,7 @@ const checkIfLoggedInAsAdmin = async () => {
 };
 
 const checkIfLoggedInAsApprover = async () => {
-  const res = await fetch("http://localhost:3001/checkifloggedin", {
+  const res = await fetch("https://aprub.onrender.com/checkifloggedin", {
     method: "POST",
     credentials: "include",
   });

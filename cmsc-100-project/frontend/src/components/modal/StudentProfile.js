@@ -10,7 +10,7 @@ export default function StudentProfile({ setProfileModalOpen, userData }) {
   const colors = tokens(theme.palette.mode);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/getapproverdetails?docRef=${userData.adviser}`)
+    fetch(`https://aprub.onrender.com/getapproverdetails?docRef=${userData.adviser}`)
       .then((response) => response.json())
       .then((body) => setAdviserName(body.fullName));
   }, []);

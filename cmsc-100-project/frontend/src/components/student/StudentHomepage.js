@@ -42,7 +42,7 @@ export default function StudentHomepage() {
     try {
       // Fetch user data
       const response = await fetch(
-        "http://localhost:3001/getloggedinuserdata",
+        "https://aprub.onrender.com/getloggedinuserdata",
         {
           method: "POST",
           credentials: "include",
@@ -60,7 +60,7 @@ export default function StudentHomepage() {
           try {
             // Fetch adviser details based on adviser's _id
             const adviserResponse = await fetch(
-              `http://localhost:3001/getapproverdetails?docRef=${data.adviser}`
+              `https://aprub.onrender.com/getapproverdetails?docRef=${data.adviser}`
             );
             if (adviserResponse.ok) {
               const adviserData = await adviserResponse.json();
@@ -90,7 +90,7 @@ export default function StudentHomepage() {
     try {
       // Fetch applications based on the user ID
       const applicationsResponse = await fetch(
-        `http://localhost:3001/getapplications?studentID=${userData._id}`
+        `https://aprub.onrender.com/getapplications?studentID=${userData._id}`
       );
 
       if (applicationsResponse.ok) {
@@ -104,7 +104,7 @@ export default function StudentHomepage() {
                 try {
                   // Fetch commenter details based on commenter's _id
                   const commenterResponse = await fetch(
-                    `http://localhost:3001/getapproverdetails?docRef=${remark.commenter}`
+                    `https://aprub.onrender.com/getapproverdetails?docRef=${remark.commenter}`
                   );
                   if (commenterResponse.ok) {
                     const commenterData = await commenterResponse.json();
@@ -176,7 +176,7 @@ export default function StudentHomepage() {
   // ===========================================================================
   // closes an application
   const closeApplication = async (appID) => {
-    let result = await fetch("http://localhost:3001/closeapplication", {
+    let result = await fetch("https://aprub.onrender.com/closeapplication", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -230,7 +230,7 @@ export default function StudentHomepage() {
 
     try {
       // Submit the application
-      const response = await fetch("http://localhost:3001/submitapplication", {
+      const response = await fetch("https://aprub.onrender.com/submitapplication", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -263,7 +263,7 @@ export default function StudentHomepage() {
   // post remark to an application
   const postRemark = async (application) => {
     try {
-      const response = await fetch("http://localhost:3001/returnapplication", {
+      const response = await fetch("https://aprub.onrender.com/returnapplication", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

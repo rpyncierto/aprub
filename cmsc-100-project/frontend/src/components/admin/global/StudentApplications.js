@@ -29,7 +29,7 @@ export default function StudentApplications() {
 
     // // get admin data from DB
     // useEffect(() => {
-    //     fetch("http://localhost:3001/getloggedinuserdata", {
+    //     fetch("https://aprub.onrender.com/getloggedinuserdata", {
     //         method: "POST",
     //         credentials: 'include'
     //     })
@@ -40,7 +40,7 @@ export default function StudentApplications() {
 
     // get admin data from DB
     useEffect(() => {
-        fetch("http://localhost:3001/getloggedinuserdata", {
+        fetch("https://aprub.onrender.com/getloggedinuserdata", {
             method: "POST",
             credentials: "include",
         })
@@ -75,7 +75,7 @@ export default function StudentApplications() {
     }
 
     const getPendingAccounts = function () {
-        fetch(`http://localhost:3001/getpendingaccounts?sort=${sort}`)
+        fetch(`https://aprub.onrender.com/getpendingaccounts?sort=${sort}`)
             .then((response) => response.json())
             .then((body) => setPendingAccounts(body));
     };
@@ -90,7 +90,7 @@ export default function StudentApplications() {
     };
 
     const rejectAccount = function (docRef) {
-        fetch("http://localhost:3001/rejectaccount", {
+        fetch("https://aprub.onrender.com/rejectaccount", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -117,13 +117,13 @@ export default function StudentApplications() {
     // }
 
     const getStudents = function () {
-        fetch(`http://localhost:3001/getstudents?sort=${sort}`)
+        fetch(`https://aprub.onrender.com/getstudents?sort=${sort}`)
             .then(response => response.json())
             .then(body => setStudents(body))
     }
 
     const getAdvisers = function () {
-        fetch("http://localhost:3001/getadvisers")
+        fetch("https://aprub.onrender.com/getadvisers")
             .then(response => response.json())
             .then(body => setAdvisers(body))
     }
@@ -137,7 +137,7 @@ export default function StudentApplications() {
             return;
         }
 
-        fetch("http://localhost:3001/assignadviser", {
+        fetch("https://aprub.onrender.com/assignadviser", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -157,7 +157,7 @@ export default function StudentApplications() {
     }
 
     const approveAccount = function (docRef) {
-        fetch("http://localhost:3001/approveaccount", {
+        fetch("https://aprub.onrender.com/approveaccount", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

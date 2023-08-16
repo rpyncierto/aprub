@@ -73,7 +73,7 @@ export default function SignUp() {
       return;
     }
 
-    fetch("http://localhost:3001/signup", {
+    fetch("https://aprub.onrender.com/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

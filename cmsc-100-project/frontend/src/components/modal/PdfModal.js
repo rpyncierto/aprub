@@ -22,7 +22,7 @@ export default function PdfModal({ setpdfModal }) {
     try {
       // Fetch user data
       const response = await fetch(
-        "http://localhost:3001/getloggedinuserdata",
+        "https://aprub.onrender.com/getloggedinuserdata",
         {
           method: "POST",
           credentials: "include",
@@ -44,7 +44,7 @@ export default function PdfModal({ setpdfModal }) {
 
   const fetchOfficerClient = async () => {
     try {
-      const response = await fetch("http://localhost:3001/getofficerdetails", {
+      const response = await fetch("https://aprub.onrender.com/getofficerdetails", {
         method: "GET",
         credentials: "include",
       });
@@ -67,7 +67,7 @@ export default function PdfModal({ setpdfModal }) {
     try {
       if (userData.adviser) {
         const response = await fetch(
-          `http://localhost:3001/getapproverdetails?docRef=${userData.adviser}`
+          `https://aprub.onrender.com/getapproverdetails?docRef=${userData.adviser}`
         );
         if (response.ok) {
           const body = await response.json();

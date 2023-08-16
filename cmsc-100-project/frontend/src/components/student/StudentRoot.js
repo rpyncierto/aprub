@@ -33,7 +33,7 @@ export default function StudentRoot() {
         const fetchUserData = async () => {
         try {
             const response = await fetch(
-            "http://localhost:3001/getloggedinuserdata",
+            "https://aprub.onrender.com/getloggedinuserdata",
             {
                 method: "POST",
                 credentials: "include",

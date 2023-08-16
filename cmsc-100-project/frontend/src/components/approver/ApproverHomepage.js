@@ -52,7 +52,7 @@ export default function ApproverHomepage() {
   };
 
   const returnApplication = (appID) => {
-    fetch("http://localhost:3001/returnapplication", {
+    fetch("https://aprub.onrender.com/returnapplication", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -97,7 +97,7 @@ export default function ApproverHomepage() {
 
   // fetch user data based on credentials and set userData state
   const fetchUserData = () => {
-    fetch(`http://localhost:3001/getloggedinuserdata`, {
+    fetch(`https://aprub.onrender.com/getloggedinuserdata`, {
       method: "POST",
       credentials: "include",
     })
@@ -111,7 +111,7 @@ export default function ApproverHomepage() {
   const fetchApplications = async () => {
     try {
       // Fetch applications based on the user ID
-      const applicationsResponse = await fetch(`http://localhost:3001/getapplicationsapprover`, {
+      const applicationsResponse = await fetch(`https://aprub.onrender.com/getapplicationsapprover`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -137,7 +137,7 @@ export default function ApproverHomepage() {
                 try {
                   // Fetch commenter details based on commenter's _id
                   const commenterResponse = await fetch(
-                    `http://localhost:3001/getapproverdetails?docRef=${remark.commenter}`
+                    `https://aprub.onrender.com/getapproverdetails?docRef=${remark.commenter}`
                   );
                   if (commenterResponse.ok) {
                     const commenterData = await commenterResponse.json();
@@ -181,7 +181,7 @@ export default function ApproverHomepage() {
   };
 
   const approveApplication = (appID) => {
-    fetch("http://localhost:3001/approveapplication", {
+    fetch("https://aprub.onrender.com/approveapplication", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -196,7 +196,7 @@ export default function ApproverHomepage() {
 
   const fetchAdvisers = () => {
     fetch(
-      `http://localhost:3001/getapproveraccounts?searchName=${""}&sort=${1}`
+      `https://aprub.onrender.com/getapproveraccounts?searchName=${""}&sort=${1}`
     )
       .then((response) => response.json())
       .then((body) => setAdvisers(body));

@@ -58,7 +58,7 @@ export default function Admin(props) {
   const signUp = function (e) {
     e.preventDefault();
     // send new data to api
-    fetch("http://localhost:3001/signup", {
+    fetch("https://aprub.onrender.com/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -93,7 +93,7 @@ export default function Admin(props) {
   const editApprover = function (e) {
     e.preventDefault();
     // send edited value to api
-    fetch("http://localhost:3001/editapprover", {
+    fetch("https://aprub.onrender.com/editapprover", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -129,7 +129,7 @@ export default function Admin(props) {
   // load all approver accounts based on user search and sort
   const getApproverAccounts = function () {
     fetch(
-      `http://localhost:3001/getapproveraccounts?searchName=${searchName}&sort=${sort}`
+      `https://aprub.onrender.com/getapproveraccounts?searchName=${searchName}&sort=${sort}`
     )
       .then((response) => response.json())
       .then(function (body) {
@@ -139,7 +139,7 @@ export default function Admin(props) {
 
   // get specific approver details for editing
   const getApproverDetails = function (approverID) {
-    fetch(`http://localhost:3001/getapproverdetails?docRef=${approverID}`)
+    fetch(`https://aprub.onrender.com/getapproverdetails?docRef=${approverID}`)
       .then((response) => response.json())
       .then(function (body) {
         console.log(body);
@@ -159,7 +159,7 @@ export default function Admin(props) {
   // delete approver account
   const deleteApprover = function (approverID) {
     console.log("proceed");
-    fetch("http://localhost:3001/deleteapprover", {
+    fetch("https://aprub.onrender.com/deleteapprover", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -203,7 +203,7 @@ export default function Admin(props) {
     const formData = new FormData();
     formData.append("csv-file", file);
 
-    fetch("http://localhost:3001/uploadcsv", {
+    fetch("https://aprub.onrender.com/uploadcsv", {
       method: "POST",
       body: formData,
     })
