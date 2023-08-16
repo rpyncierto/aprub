@@ -50,7 +50,7 @@ export default function Root() {
           setIsLoggedIn(true);
           const cookies = new Cookies();
           cookies.set("authToken", body.token, {
-            path: "localhost:3001/",
+            path: "aprub.onrender.com/",
             age: 60 * 60,
             sameSite: false,
           });
